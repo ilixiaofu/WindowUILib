@@ -157,3 +157,13 @@ void MainWindow::OnDestroy()
 {
 	::PostQuitMessage(0);
 }
+
+HINSTANCE MainWindow::getHInstance() const
+{
+	return this->hInstance;
+}
+
+HWND MainWindow::getHWnd() const
+{
+	return this->hWnd;
+}

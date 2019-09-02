@@ -1,7 +1,9 @@
-#ifndef __MAIN_WINDOW_H__
-#define __MAIN_WINDOW_H__
+#ifndef _MAIN_WINDOW_H_
+#define _MAIN_WINDOW_H_
 
-#include <windows.h>
+#ifndef _WINDOWS_
+#include <Windows.h>
+#endif _WINDOWS_
 
 class MainWindow
 {
@@ -18,6 +20,8 @@ protected:
 	virtual void OnPaint(HDC hdc, PAINTSTRUCT ps) = 0;
 	virtual void OnClose();
 	virtual void OnDestroy();
+	HINSTANCE getHInstance() const;
+	HWND getHWnd() const;
 
 private:
 	// 原始窗口过程
@@ -29,5 +33,4 @@ private:
 	HWND hWnd;
 };
 
-
-#endif // !__MAIN_WINDOW_H__
+#endif // !_MAIN_WINDOW_H_
